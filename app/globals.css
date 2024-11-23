@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+input,
+select {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
 @layer base {
   * {
     @apply scroll-smooth;
@@ -142,10 +148,10 @@
 
   /* =====  SHADCN OVERRIDES */
   .shad-no-focus {
-    @apply outline-none ring-offset-transparent focus:ring-transparent focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+    @apply outline-none ring-offset-transparent focus:ring-transparent focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:bg-transparent focus-visible:ring-offset-0 !important;
   }
   .shad-input {
-    @apply border-none shadow-none p-0 shad-no-focus placeholder:text-light-200 body-2 !important;
+    @apply border-none shadow-none p-0 shad-no-focus placeholder:text-light-200 bg-transparent body-2 !important;
   }
 
   .shad-form-item {
