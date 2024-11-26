@@ -5,6 +5,7 @@ import { appwriteConfig } from "@/lib/appwrite/config";
 import { Query, ID } from "node-appwrite";
 import { parseStringify } from "@/lib/utils";
 import { cookies } from "next/headers";
+import { avatarPlaceholderUrl } from "@/constants";
 import { redirect } from "next/navigation";
 
 const getUserByEmail = async (email: string) => {
@@ -58,8 +59,7 @@ export const createAccount = async ({
       {
         fullName,
         email,
-        avatar:
-          "https://www.google.com/url?sa=i&url=https%3A%2F%2Fhwchamber.co.uk%2Ftestimonial-layout-test%2Favatar-placeholder%2F&psig=AOvVaw2QXGwJf1Qa6capSaagKTzJ&ust=1732455724161000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMCVktTK8okDFQAAAAAdAAAAABAE",
+        avatar: avatarPlaceholderUrl,
         accountId,
       }
     );
