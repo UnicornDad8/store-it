@@ -20,15 +20,15 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "www.google.com",
-      },
-      {
-        protocol: "https",
         hostname: "img.freepik.com",
       },
       {
         protocol: "https",
         hostname: "cloud.appwrite.io",
+      },
+      {
+        protocol: "https",
+        hostname: "www.google.com",
       },
     ],
   },
