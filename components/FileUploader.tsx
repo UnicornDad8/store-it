@@ -8,7 +8,7 @@ import { cn, convertFileToUrl, getFileType } from "@/lib/utils";
 import Image from "next/image";
 import Thumbnail from "@/components/Thumbnail";
 import { MAX_FILE_SIZE } from "@/constants";
-// import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { uploadFile } from "@/lib/actions/file.actions";
 import { usePathname } from "next/navigation";
 
@@ -20,7 +20,7 @@ interface Props {
 
 const FileUploader = ({ ownerId, accountId, className }: Props) => {
   const path = usePathname();
-  // const { toast } = useToast();
+  const { toast } = useToast();
   const [files, setFiles] = useState<File[]>([]);
 
   const onDrop = useCallback(
@@ -33,7 +33,6 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
             prevFiles.filter((f) => f.name !== file.name)
           );
 
-          /*
           return toast({
             description: (
               <p className="body-2 text-white">
@@ -42,7 +41,7 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
               </p>
             ),
             className: "error-toast",
-          }); */
+          });
         }
 
         return uploadFile({ file, ownerId, accountId, path }).then(
