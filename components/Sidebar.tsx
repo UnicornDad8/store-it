@@ -62,13 +62,18 @@ const Sidebar = ({ fullName, avatar, email }: Props) => {
         </ul>
       </nav>
 
-      <Image
-        src="/assets/images/files-2.png"
-        alt="logo"
-        width={506}
-        height={418}
-        className="w-full"
-      />
+      <div className="sidebar-user-thumbnail">
+        <Image
+          src="/assets/images/files-2.png"
+          alt="logo"
+          width={126.5}
+          height={104.5}
+        />
+        <div className="hidden lg:block">
+          <p className="subtitle-2 capitalize">Google Drive</p>
+          <p className="caption">app like (clone)</p>
+        </div>
+      </div>
 
       <div className="sidebar-user-info">
         <Image
