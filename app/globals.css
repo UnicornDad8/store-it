@@ -8,6 +8,16 @@ select {
   background-clip: text !important;
 }
 
+::selection {
+  color: none;
+  background: none;
+}
+/* For Mozilla Firefox */
+::-moz-selection {
+  color: none;
+  background: none;
+}
+
 @layer base {
   * {
     @apply scroll-smooth;
