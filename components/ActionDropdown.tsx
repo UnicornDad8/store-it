@@ -29,7 +29,7 @@ import {
   updateFileUsers,
 } from "@/lib/actions/file.actions";
 import { usePathname } from "next/navigation";
-// import { FileDetails, ShareInput } from "@/components/ActionsModalContent";
+import { FileDetails, ShareInput } from "@/components/ActionsModalContent";
 
 const ActionDropdown = ({ file }: { file: Models.Document }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,7 +41,6 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
 
   const path = usePathname();
 
-  /*
   const closeAllModals = () => {
     setIsModalOpen(false);
     setIsDropdownOpen(false);
@@ -83,7 +82,6 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
     closeAllModals();
   };
 
-  
   const renderDialogContent = () => {
     if (!action) return null;
 
@@ -138,7 +136,7 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
         )}
       </DialogContent>
     );
-  }; */
+  };
 
   return (
     <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
@@ -202,7 +200,7 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
         </DropdownMenuContent>
       </DropdownMenu>
 
-      {/* renderDialogContent() */}
+      {renderDialogContent()}
     </Dialog>
   );
 };
