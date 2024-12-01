@@ -2,6 +2,7 @@
 
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetTitle,
   SheetTrigger,
@@ -75,26 +76,28 @@ const MobileNavigation = ({
           <nav className="mobile-nav">
             <ul className="mobile-nav-list">
               {navItems.map(({ url, name, icon }) => (
-                <Link key={name} href={url} className="lg:w-full">
-                  <li
-                    className={cn(
-                      "mobile-nav-item",
-                      pathname === url && "shad-active"
-                    )}
-                  >
-                    <Image
-                      src={icon}
-                      alt={name}
-                      width={24}
-                      height={24}
+                <SheetClose asChild key={name}>
+                  <Link href={url} className="lg:w-full">
+                    <li
                       className={cn(
-                        "nav-icon",
-                        pathname === url && "nav-icon-active"
+                        "mobile-nav-item",
+                        pathname === url && "shad-active"
                       )}
-                    />
-                    <p>{name}</p>
-                  </li>
-                </Link>
+                    >
+                      <Image
+                        src={icon}
+                        alt={name}
+                        width={24}
+                        height={24}
+                        className={cn(
+                          "nav-icon",
+                          pathname === url && "nav-icon-active"
+                        )}
+                      />
+                      <p>{name}</p>
+                    </li>
+                  </Link>
+                </SheetClose>
               ))}
             </ul>
           </nav>
